@@ -1,0 +1,16 @@
+[
+{
+  "modid": "maginetics",
+  "name": "Maginetics",
+  "description": "Magical Mod for 1.12 and beyond",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MoreThanHidden"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,7 @@
+{
+  "parent": "maginetics:block/glowoverlay",
+  "textures": {
+    "overlay": "maginetics:blocks/gemore",
+    "all": "minecraft:blocks/stone"
+  }
+}
