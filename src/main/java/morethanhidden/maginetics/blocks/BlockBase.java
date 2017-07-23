@@ -12,7 +12,7 @@ public class BlockBase extends Block{
 
     public BlockBase(String name) {
         super(Material.ROCK);
-        setUnlocalizedName(name);
+        setUnlocalizedName(Maginetics.MODID + "." + name);
         setRegistryName(name);
         setHardness(3);
         setCreativeTab(Maginetics.tabmaginetics);

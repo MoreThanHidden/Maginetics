@@ -1,0 +1,13 @@
+itemGroup.Maginetics=Maginetics
+fluid.mana=Mana
+fluid.grass=Liquid Grass
+fluid.fire=Liquid Fire
+tile.maginetics.gemore.name=Magical Gem Ore
+tile.maginetics.blockgem.name=Magical Gem Block
+tile.maginetics.pedistal.name=Pedistal
+item.maginetics.gem.name=Magical Gem
+item.maginetics.wand.name=Wand
+item.maginetics.staff.name=Staff
+item.maginetics.scroll.name=Scroll
+item.maginetics.blankscroll.name=Blank Scroll
+item.maginetics.depletedgem.name=Depleted Magical Gem

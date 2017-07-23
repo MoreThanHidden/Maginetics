@@ -24,6 +24,8 @@ public class BlockRegistry {
     public static Block gemOre;
     @ObjectHolder(Maginetics.MODID + ":blockgem")
     public static Block blockGem;
+    @ObjectHolder(Maginetics.MODID + ":pedistal")
+    public static Block pedistal;
     @ObjectHolder(Maginetics.MODID + ":blockliquidmana")
     public static Block blockLiquidMana;
     @ObjectHolder(Maginetics.MODID + ":blockliquidgrass")
@@ -40,7 +42,8 @@ public class BlockRegistry {
             IForgeRegistry<Block> blockRegistry = event.getRegistry();
 
             blockRegistry.register(gemOre = new GemOre());
-            blockRegistry.register(new BlockBase("blockgem"));
+            blockRegistry.register(blockGem = new BlockBase("blockgem"));
+            blockRegistry.register(pedistal = new PedistalBlock());
             blockRegistry.register(blockLiquidMana = new BlockLiquidMana(MFluidRegistry.liquidMana, Material.WATER));
             blockRegistry.register(blockLiquidFire = new BlockLiquidFire(MFluidRegistry.liquidFire, Material.LAVA));
             blockRegistry.register(blockLiquidGrass = new BlockLiquidGrass(MFluidRegistry.liquidGrass, Material.WATER));
@@ -51,6 +54,7 @@ public class BlockRegistry {
             IForgeRegistry<Item> itemRegistry = event.getRegistry();
             itemRegistry.register(new ItemBlock(gemOre).setRegistryName(gemOre.getRegistryName()));
             itemRegistry.register(new ItemBlock(blockGem).setRegistryName(blockGem.getRegistryName()));
+            itemRegistry.register(new ItemBlock(pedistal).setRegistryName(pedistal.getRegistryName()));
         }
 
         @SubscribeEvent
@@ -58,6 +62,7 @@ public class BlockRegistry {
             //Models
             ModelHelper.registerItemModel(Item.getItemFromBlock(gemOre), 0);
             ModelHelper.registerItemModel(Item.getItemFromBlock(blockGem), 0);
+            ModelHelper.registerItemModel(Item.getItemFromBlock(pedistal), 0);
 
         }
 

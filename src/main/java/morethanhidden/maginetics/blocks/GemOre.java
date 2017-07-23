@@ -10,15 +10,12 @@ import net.minecraft.util.BlockRenderLayer;
 
 import java.util.Random;
 
-public class GemOre extends Block{
+public class GemOre extends BlockBase{
 
     public GemOre () {
-        super(Material.ROCK);
-        setCreativeTab(Maginetics.tabmaginetics);
+        super("gemore");
         setHardness(4.0F);
         setHarvestLevel("pickaxe",3);
-        setUnlocalizedName("gemore");
-        setRegistryName("gemore");
     }
 
     @Override

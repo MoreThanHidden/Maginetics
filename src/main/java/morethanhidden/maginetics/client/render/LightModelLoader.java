@@ -24,8 +24,11 @@ public class LightModelLoader implements ICustomModelLoader{
             String[] splitRes = res.toString().split("#");
             if(splitRes.length > 1 && splitRes[1].equals("normal")){
                 JsonElement json = getJSON(new ResourceLocation(res.getResourceDomain(), "models/block/" + res.getResourcePath()));
-                if(json.isJsonObject() && json.getAsJsonObject().get("parent").getAsString().equals("maginetics:block/glowoverlay")){
-                    return true;
+                if(json.isJsonObject()) {
+                    JsonElement parent = json.getAsJsonObject().get("parent");
+                    if (parent != null && parent.getAsString().equals("maginetics:block/glowoverlay")) {
+                        return true;
+                    }
                 }
             }
         }
