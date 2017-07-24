@@ -1,18 +1,15 @@
 package morethanhidden.maginetics;
 
 import morethanhidden.maginetics.proxy.common;
-import morethanhidden.maginetics.registry.BlockRegistry;
 import morethanhidden.maginetics.registry.ItemRegistry;
 import morethanhidden.maginetics.registry.MFluidRegistry;
+import morethanhidden.maginetics.blocks.tile.PedistalTile;
 import morethanhidden.maginetics.world.MagineticsWorld;
 import morethanhidden.maginetics.world.WorldGenMaginetics;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -36,7 +33,7 @@ public class Maginetics
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        GameRegistry.registerTileEntity(PedistalTile.class, "maginetics.pedistaltile");
         MFluidRegistry.preinit();
         proxy.registerRenderers();
 
