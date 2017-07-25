@@ -13,6 +13,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.util.Collections;
+
 public class ItemRegistry {
 
     @ObjectHolder(Maginetics.MODID + ":gem")
@@ -35,8 +37,8 @@ public class ItemRegistry {
         public static void registerItems(RegistryEvent.Register<Item> event) {
             IForgeRegistry<Item> itemRegistry = event.getRegistry();
             //Items
-            itemRegistry.register(new BaseItem("gem"));
-            itemRegistry.register(new BaseItem("depletedgem"));
+            itemRegistry.register(new BaseItem("gem", "tooltip.maginetics.gem"));
+            itemRegistry.register(new BaseItem("depletedgem", "tooltip.maginetics.depletedgem"));
             itemRegistry.register(new BaseItem("blankscroll"));
             itemRegistry.register(new WandItem());
             itemRegistry.register(new StaffItem());

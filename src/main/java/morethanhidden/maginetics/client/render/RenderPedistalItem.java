@@ -1,6 +1,6 @@
 package morethanhidden.maginetics.client.render;
 
-import morethanhidden.maginetics.blocks.tile.PedistalTile;
+import morethanhidden.maginetics.blocks.tile.PedestalTile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -16,7 +16,7 @@ public class RenderPedistalItem extends TileEntitySpecialRenderer {
     @Override
     public void render(TileEntity te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
 
-        ItemStack stack =  ((PedistalTile)te).getItemHandler().getStackInSlot(0);
+        ItemStack stack =  ((PedestalTile)te).getItemHandler().getStackInSlot(0);
 
         if(!stack.isEmpty()){
             GlStateManager.pushMatrix();

@@ -3,7 +3,7 @@ package morethanhidden.maginetics;
 import morethanhidden.maginetics.proxy.common;
 import morethanhidden.maginetics.registry.ItemRegistry;
 import morethanhidden.maginetics.registry.MFluidRegistry;
-import morethanhidden.maginetics.blocks.tile.PedistalTile;
+import morethanhidden.maginetics.blocks.tile.PedestalTile;
 import morethanhidden.maginetics.world.MagineticsWorld;
 import morethanhidden.maginetics.world.WorldGenMaginetics;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,7 +33,7 @@ public class Maginetics
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GameRegistry.registerTileEntity(PedistalTile.class, "maginetics.pedistaltile");
+        GameRegistry.registerTileEntity(PedestalTile.class, "maginetics.pedistaltile");
         MFluidRegistry.preinit();
         proxy.registerRenderers();
 

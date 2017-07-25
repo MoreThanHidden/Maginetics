@@ -1,11 +1,10 @@
 package morethanhidden.maginetics.blocks;
 
 import morethanhidden.maginetics.Maginetics;
-import morethanhidden.maginetics.blocks.tile.PedistalTile;
+import morethanhidden.maginetics.blocks.tile.PedestalTile;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -20,13 +19,13 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class PedistalBlock extends BlockContainer {
+public class PedestalBlock extends BlockContainer {
 
 
-    public PedistalBlock() {
+    public PedestalBlock() {
         super(Material.ROCK);
-        setUnlocalizedName(Maginetics.MODID + ".pedistal");
-        setRegistryName("pedistal");
+        setUnlocalizedName(Maginetics.MODID + ".pedestal");
+        setRegistryName("pedestal");
         setHardness(3);
         setCreativeTab(Maginetics.tabmaginetics);
     }
@@ -49,7 +48,7 @@ public class PedistalBlock extends BlockContainer {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new PedistalTile();
+        return new PedestalTile();
     }
 
     @Override
@@ -64,7 +63,7 @@ public class PedistalBlock extends BlockContainer {
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        PedistalTile tile = (PedistalTile) worldIn.getTileEntity(pos);
+        PedestalTile tile = (PedestalTile) worldIn.getTileEntity(pos);
         ItemStack item = tile.getItemHandler().getStackInSlot(0);
         if(item != ItemStack.EMPTY ){
             playerIn.inventory.addItemStackToInventory(tile.getItemHandler().extractItem(0, 1,false));

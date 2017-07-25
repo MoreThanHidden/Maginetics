@@ -12,7 +12,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 
-public class PedistalTile extends TileEntity{
+public class PedestalTile extends TileEntity{
 
     ItemStackHandler itemHandler = new ItemStackHandler(1);
 

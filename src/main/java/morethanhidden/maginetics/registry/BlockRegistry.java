@@ -5,15 +5,9 @@ import morethanhidden.maginetics.blocks.*;
 import morethanhidden.maginetics.util.ModelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -25,8 +19,8 @@ public class BlockRegistry {
     public static Block gemOre;
     @ObjectHolder(Maginetics.MODID + ":blockgem")
     public static Block blockGem;
-    @ObjectHolder(Maginetics.MODID + ":pedistal")
-    public static Block pedistal;
+    @ObjectHolder(Maginetics.MODID + ":pedestal")
+    public static Block pedestal;
     @ObjectHolder(Maginetics.MODID + ":blockliquidmana")
     public static Block blockLiquidMana;
     @ObjectHolder(Maginetics.MODID + ":blockliquidgrass")
@@ -44,7 +38,7 @@ public class BlockRegistry {
 
             blockRegistry.register(gemOre = new GemOre());
             blockRegistry.register(blockGem = new BlockBase("blockgem"));
-            blockRegistry.register(pedistal = new PedistalBlock());
+            blockRegistry.register(pedestal = new PedestalBlock());
             blockRegistry.register(blockLiquidMana = new BlockLiquidMana(MFluidRegistry.liquidMana, Material.WATER));
             blockRegistry.register(blockLiquidFire = new BlockLiquidFire(MFluidRegistry.liquidFire, Material.LAVA));
             blockRegistry.register(blockLiquidGrass = new BlockLiquidGrass(MFluidRegistry.liquidGrass, Material.WATER));
@@ -55,7 +49,7 @@ public class BlockRegistry {
             IForgeRegistry<Item> itemRegistry = event.getRegistry();
             itemRegistry.register(new ItemBlock(gemOre).setRegistryName(gemOre.getRegistryName()));
             itemRegistry.register(new ItemBlock(blockGem).setRegistryName(blockGem.getRegistryName()));
-            itemRegistry.register(new ItemBlock(pedistal).setRegistryName(pedistal.getRegistryName()));
+            itemRegistry.register(new ItemBlock(pedestal).setRegistryName(pedestal.getRegistryName()));
         }
 
         @SubscribeEvent
@@ -63,7 +57,7 @@ public class BlockRegistry {
             //Models
             ModelHelper.registerItemModel(Item.getItemFromBlock(gemOre), 0);
             ModelHelper.registerItemModel(Item.getItemFromBlock(blockGem), 0);
-            ModelHelper.registerItemModel(Item.getItemFromBlock(pedistal), 0);
+            ModelHelper.registerItemModel(Item.getItemFromBlock(pedestal), 0);
 
         }
 
