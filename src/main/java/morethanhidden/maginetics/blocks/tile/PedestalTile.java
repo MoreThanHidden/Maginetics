@@ -1,6 +1,7 @@
 package morethanhidden.maginetics.blocks.tile;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -14,7 +15,13 @@ import javax.annotation.Nonnull;
 
 public class PedestalTile extends TileEntity{
 
-    ItemStackHandler itemHandler = new ItemStackHandler(1);
+    ItemStackHandler itemHandler = new ItemStackHandler(1){
+        @Override
+        public int getSlotLimit(int slot)
+        {
+            return 1;
+        }
+    };
 
     @Override
     public boolean shouldRefresh(World world, BlockPos pos, @Nonnull IBlockState oldState, @Nonnull IBlockState newState) {
