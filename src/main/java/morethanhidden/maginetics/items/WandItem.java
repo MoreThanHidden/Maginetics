@@ -20,7 +20,7 @@ import java.util.Map;
 public class WandItem extends BaseItem {
 
     //Magic Recipes need to move this to its own class or json registry
-    public static Map<ResourceLocation, ResourceLocation> recipes = new HashMap<ResourceLocation, ResourceLocation>();
+    public static Map<ResourceLocation, ResourceLocation> recipes = new HashMap<>();
     static {
         recipes.put(new ResourceLocation("maginetics:blankscroll"), new ResourceLocation("maginetics:scroll"));
     }

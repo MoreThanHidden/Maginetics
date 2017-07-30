@@ -4,6 +4,7 @@ import morethanhidden.maginetics.proxy.common;
 import morethanhidden.maginetics.registry.ItemRegistry;
 import morethanhidden.maginetics.registry.MFluidRegistry;
 import morethanhidden.maginetics.blocks.tile.PedestalTile;
+import morethanhidden.maginetics.util.MagineticsGuiHandler;
 import morethanhidden.maginetics.world.MagineticsWorld;
 import morethanhidden.maginetics.world.WorldGenMaginetics;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -50,6 +52,7 @@ public class Maginetics
     @Mod.EventHandler
     public void load(FMLInitializationEvent event) {
         MFluidRegistry.init();
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new MagineticsGuiHandler());
         GameRegistry.registerWorldGenerator(new WorldGenMaginetics(), 10);
         MagineticsWorld.mainRegistry();
 
