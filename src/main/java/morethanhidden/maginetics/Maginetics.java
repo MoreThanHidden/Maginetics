@@ -4,7 +4,7 @@ import morethanhidden.maginetics.proxy.common;
 import morethanhidden.maginetics.registry.ItemRegistry;
 import morethanhidden.maginetics.registry.MFluidRegistry;
 import morethanhidden.maginetics.blocks.tile.PedestalTile;
-import morethanhidden.maginetics.util.MagineticsGuiHandler;
+import morethanhidden.maginetics.client.MagineticsGuiHandler;
 import morethanhidden.maginetics.world.MagineticsWorld;
 import morethanhidden.maginetics.world.WorldGenMaginetics;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,8 +20,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(modid = Maginetics.MODID, version = Maginetics.VERSION, name = "Maginetics")
-public class Maginetics
-{
+public class Maginetics{
+
+    @Mod.Instance
+    public static Maginetics INSTANCE = new Maginetics();
+
     public static final String MODID = "maginetics";
     public static final String VERSION = "0.1";
     public static int config_gemrate = 7;
@@ -38,6 +41,7 @@ public class Maginetics
         GameRegistry.registerTileEntity(PedestalTile.class, "maginetics.pedistaltile");
         MFluidRegistry.preinit();
         proxy.registerRenderers();
+        proxy.preInit();
 
     }
 

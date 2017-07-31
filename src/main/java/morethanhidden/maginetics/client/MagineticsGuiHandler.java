@@ -1,4 +1,4 @@
-package morethanhidden.maginetics.util;
+package morethanhidden.maginetics.client;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -7,6 +7,9 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 import javax.annotation.Nullable;
 
 public class MagineticsGuiHandler implements IGuiHandler{
+
+    public static final int MANA_GUI = 0;
+    public static final int SPELL_GUI = 1;
 
     @Nullable
     @Override
