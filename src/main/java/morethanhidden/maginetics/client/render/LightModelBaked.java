@@ -20,7 +20,7 @@ import java.util.function.Function;
 public class LightModelBaked implements IBakedModel
 {
     private static VertexFormat format;
-    private static TextureAtlasSprite base, overlay;
+    private final TextureAtlasSprite base, overlay;
 
     public LightModelBaked(VertexFormat format, Function<ResourceLocation, TextureAtlasSprite> bakedTextureGetter, ResourceLocation base, ResourceLocation overlay)
     {

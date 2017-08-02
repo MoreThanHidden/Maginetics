@@ -4,6 +4,7 @@ fluid.grass=Liquid Grass
 fluid.fire=Liquid Fire
 tile.maginetics.gemore.name=Magical Gem Ore
 tile.maginetics.blockgem.name=Magical Gem Block
+tile.maginetics.blockrune.name=Rune Block
 tile.maginetics.pedestal.name=Pedestal
 item.maginetics.gem.name=Magical Gem
 item.maginetics.wand.name=Wand

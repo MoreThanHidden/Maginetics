@@ -1,0 +1,7 @@
+{
+  "parent": "maginetics:block/glowoverlay",
+  "textures": {
+    "overlay": "maginetics:blocks/magstone1",
+    "all": "maginetics:blocks/magstone0"
+  }
+}
