@@ -40,7 +40,7 @@ public class BlockRegistry {
 
             blockRegistry.register(gemOre = new GemOre());
             blockRegistry.register(blockGem = new BlockBase("blockgem"));
-            blockRegistry.register(blockRune = new BlockBase("blockrune"));
+            blockRegistry.register(blockRune = new SubBlock("blockrune", new String[]{"1", "2", "3"}));
             blockRegistry.register(pedestal = new PedestalBlock());
             blockRegistry.register(blockLiquidMana = new BlockLiquidMana(MFluidRegistry.liquidMana, Material.WATER));
             blockRegistry.register(blockLiquidFire = new BlockLiquidFire(MFluidRegistry.liquidFire, Material.LAVA));
@@ -61,7 +61,9 @@ public class BlockRegistry {
             //Models
             ModelHelper.registerItemModel(Item.getItemFromBlock(gemOre), 0);
             ModelHelper.registerItemModel(Item.getItemFromBlock(blockGem), 0);
-            ModelHelper.registerItemModel(Item.getItemFromBlock(blockRune), 0);
+            ModelHelper.registerItemModel(Item.getItemFromBlock(blockRune), 0, "blockrune", "1");
+            ModelHelper.registerItemModel(Item.getItemFromBlock(blockRune), 1, "blockrune", "2");
+            ModelHelper.registerItemModel(Item.getItemFromBlock(blockRune), 2, "blockrune", "3");
             ModelHelper.registerItemModel(Item.getItemFromBlock(pedestal), 0);
 
         }
