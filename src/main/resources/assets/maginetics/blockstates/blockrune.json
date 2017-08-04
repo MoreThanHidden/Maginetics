@@ -15,14 +15,23 @@
         ],
         "1": [
             {
+                "textures": {
+                    "overlay": "maginetics:blocks/magstone1"
+                }
             }
         ],
         "2": [
             {
+                "textures": {
+                    "overlay": "maginetics:blocks/magstone2"
+                }
             }
         ],
         "3": [
             {
+                "textures": {
+                    "overlay": "maginetics:blocks/magstone3"
+                }
             }
         ]
     }

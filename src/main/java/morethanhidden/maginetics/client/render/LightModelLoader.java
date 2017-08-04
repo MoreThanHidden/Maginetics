@@ -37,11 +37,32 @@ public class LightModelLoader implements ICustomModelLoader{
 
     @Override
     public IModel loadModel(ResourceLocation res) throws Exception {
+
         String path = "models/block/" + res.getResourcePath();
-        res = new ResourceLocation(res.getResourceDomain(), path);
-        JsonObject textures = getJSON(res).getAsJsonObject().getAsJsonObject("textures");
+        ResourceLocation res1 = new ResourceLocation(res.getResourceDomain(), path);
+        JsonObject textures = getJSON(res1).getAsJsonObject().getAsJsonObject("textures");
         ResourceLocation overlay = new ResourceLocation( textures.get("overlay").getAsString());
         ResourceLocation base =  new ResourceLocation( textures.get("all").getAsString());
+
+        String varient = res.toString().split("#")[1];
+        if(!varient.equals("normal")) {
+            path = "blockstates/" + res.getResourcePath();
+            res1 = new ResourceLocation(res.getResourceDomain(), path);
+            JsonObject variants = getJSON(res1).getAsJsonObject().getAsJsonObject("variants");
+            JsonObject texture = variants.getAsJsonObject(varient).getAsJsonObject("textures");
+
+            if (texture != null) {
+                String overlay2 = texture.get("overlay").getAsString();
+                String base2 = texture.get("all").getAsString();
+                if (overlay2 != null) {
+                    overlay = new ResourceLocation(overlay2);
+                }
+                if (base2 != null) {
+                    base = new ResourceLocation(base2);
+                }
+            }
+        }
+
         return new LightModelWrapper(base, overlay);
     }
 
